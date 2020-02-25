@@ -1,16 +1,40 @@
-.inner-page{
+.inner-page {
   color: #000000;
   background-color: #f8f5f2;
   background-image: url("../img/Index/bcg-slice.jpg");
   background-position: 0 0;
   background-repeat: repeat;
+  & .main-header{
+    background-color: #000000;
+    margin-bottom: 50px;  
+  }
+  & .main-header-logo{
+    width: 111px;
+    height: 24px;
+    padding: 23px 20px;
+    order: 0;
+  
+  }
+  & .main-navigation{
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  & .user-navigation{
+    margin-left: auto;
+  }
 }
 .page-title{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
   font-size: 30px;
   line-height: 42px;
 }
 .breadcrumbs{
   list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
   &-current{
     color: #aba9a7;
   }
@@ -22,17 +46,21 @@
     text-decoration: underline;
   }
 }
-.filter fieldset{
-  border: none;
+.filter{
+  width: 180px;
+  & fieldset{
+    border: none;
+  }
+  & legend{
+    font-size: 24px;
+    line-height: 30px;
+  }  
+  & ul{
+    list-style: none;
+    line-height: 18px;
+  }  
 }
-.filter legend{
-  font-size: 24px;
-  line-height: 30px;
-}
-.filter ul{
-  list-style: none;
-  line-height: 18px;
-}
+ 
 .filter-input:hover + label,
 .filter-input:focus + label{
   color: #663d15;
@@ -41,22 +69,40 @@
   color: #000000;
   opacity: 0.5;
 }
-.catalog-list{
-  list-style: none;
-}
-.catalog-item{
-  background-color: #f8f8f8;
-  box-shadow: 0 0 15px rgba(0, 1, 1, 0.1);
-  &:hover{
-    box-shadow: 0 0 15px rgba(0, 1, 1, 0.2);
+.catalog{
+  width: 700px;
+  &-item{
+    background-color: #f8f8f8;
+    box-shadow: 0 0 15px rgba(0, 1, 1, 0.1);
+    width: 220px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    &:nth-last-child(3n){
+      margin-right: 0;
+    }
+    &:hover{
+      box-shadow: 0 0 15px rgba(0, 1, 1, 0.2);
+    }
   }
-}
-.catalog-item a{
-  color: #000000;
-}
-.catalog-item h3{
-  font-size: 14px;
-  line-height: 18px;
+  &-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+  &-item a{
+    color: #000000;
+  }
+  &-item h3{
+    font-size: 14px;
+    line-height: 18px;
+  }
+  &-columns{
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .catalog-category{
   text-transform: none;
@@ -73,6 +119,9 @@
 }
 .pagination-list{
   list-style: none;
+  margin: 0;
+  padding: 0;
+
 }
 .pagination-item a{
   color: #ffffff;
@@ -93,6 +142,9 @@
     background-color: #ffffff;
   }
 }
+.product-photos{
+  width: 460px;
+}
 .product-photo-preview{
   list-style: none;
 }
@@ -110,6 +162,9 @@
   line-height: 20px;
   text-align: center;
   background-color: #e5e5e5;
+}
+.product-info{
+  width: 390px;
 }
 .product-info h3{
   font-size: 24px;
