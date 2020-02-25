@@ -29,12 +29,36 @@
   padding: 0;
   list-style: none;
   width: 620px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 .user-navigation{
+  display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
-  width: 140px;
+  max-width: 140px;
+  & .login-link{
+    padding-left: 50px;
+    position: relative;
+  }
+}
+.login-link:before{
+  content:"";
+  width: 16px;
+  height: 18px;
+  position: absolute;
+  top: 29px;
+  left: 24px;
+  background-image: url("../img/Index/login.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+}
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before{
+  opacity: 1;
 }
 .container{
   width: 940px;
@@ -43,7 +67,10 @@
 }
 .site-navigation a, 
 .user-navigation a{
-  color: #ffffff
+  color: #ffffff;
+  display: block;
+  padding: 25px 20px;
+  color: #ffffff;
 }
 .site-navigation a:hover,
 .site-navigation a:focus,
@@ -65,17 +92,37 @@
 .features-item{
   text-align: center;
   width: 300px;
+  & p{
+    margin: 0px 10px;
+  }
 }
 .features-item h3{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 60px;
   font-size: 30px;
   line-height: 42px;
+  position: relative;
+  &::after{
+    content:"";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    left: 50%;
+    bottom: -30px;
+    margin-left: -10px;
+    transform: rotate(45deg);
+  }
 }
 .index-columns{
   color: #000000;
   background-color: #f8f5f2;
-  background-image: url("../img/Index/bcg-slice.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-image:
+  url("../img/Index/line.png"),
+    url("../img/Index/bcg-slice.jpg");
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
   padding: 50px 80px;
   display: flex;
   justify-content: space-between;
@@ -84,22 +131,26 @@
 .index-columns h2{ 
   font-size: 30px;
   line-height: 42px;
+  margin: 0;
+  margin-bottom: 25px;
 }
 .news{
   width: 380px;
+  &-item{
+    margin-bottom: 25px;
+    & p{
+      margin: 0;
+    }
+  }
 }
 .news-list{
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
   list-style: none;
 }
 .news-item time{
   text-transform: none;
-}
-.gallery{
-  width: 300px;
-}
-.gallery-content{
-  background-color: #cccccc;
-  border: 7px solid #ffffff;
 }
 .button{
   font: inherit;
@@ -109,20 +160,90 @@
   text-transform: uppercase;
   background-color: #000000;
   border: none;
-  // padding: 1px 6px;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-right: 16px;
 }
 .button:hover,
 .button:focus,
 .button:active{
   background-color: #663d15;
 }
+.button.disabled,
+.button:disabled{
+  cursor: default;
+  opacity: 0.5;
+  background-color: #000000;
+}
+.gallery{
+  width: 300px;
+  &-button{
+    box-sizing: border-box;
+    width: 140px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    &-back{
+      left: 0;
+    }
+    &-next{
+      right: 0;
+    }
+  }
+  &-container{
+    width: 300px;
+    position: relative;
+    height: 260px;
+  }
+}
+.gallery-content{
+  height: 164px;
+  margin: 0;
+  background-color: #cccccc;
+  border: 7px solid #ffffff;
+  & img{
+    width: 286px;
+    height: 164px;
+  }
+}
 .contacts{
   width: 380px;
+  & p{
+    margin: 0;
+    margin-bottom: 25px;
+  }
 }
 .appointment{
   width: 300px;
+  &-info{
+    margin: 0;
+    margin-bottom: 15px;
+    }
+  &-item{
+    width: 140px;
+    margin: 0;
+    margin-bottom: 10px;
+    & label{
+      display: block;
+      margin-bottom: 9px;
+      margin-left: 15px;
+    }
+  }  
+  &-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  & .button{
+    width: 100%;
+    margin-top: 10px;
+    margin-right: 0;
+  }
 }
 .appointment-item input{
+  box-sizing: border-box;
+  width: 140px;
+  padding: 8px 15px 7px 15px;
   font: inherit;
   background-color: transparent;
   border: 2px solid #000101;
@@ -156,18 +277,46 @@
 }
 .footer-social{
   text-align: center;
+  & b{
+    display: block;
+    margin-bottom: 15px;
+  }
 }
 .footer-social ul{
   list-style: none;
+  display: flex;
+  width: 141px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
 }
 .social-button{
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  background-color: #000000;
+}
+.social-button:hover,
+.social-button:focus{
+  background-color: #ffffff;  
+}
+.social-button:hover path,
+.social-button:focus path{
+  fill: #000000;
 }
 .footer-copyring{
   text-align: center;
   margin: 0;
   width: 150px;
   margin-left: auto;
+  & b{
+    display: block;
+    margin-bottom: 15px;
+  }
 }  
 .footer-copyring .button:hover,
 .footer-copyring .button:focus{
