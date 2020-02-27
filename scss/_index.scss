@@ -33,6 +33,9 @@
   flex-wrap: nowrap;
   &-current{
     position: relative;
+    & a:not([href]){
+      opacity: 0.7;
+    }
   }
   &-current::after {
     content: "";
