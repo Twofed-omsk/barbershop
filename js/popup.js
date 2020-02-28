@@ -4,6 +4,7 @@ var popup = document.querySelector(".modal-login");
 var close = document.querySelector(".modal-close");
 var map = document.querySelector(".modal-map");
 var map_btn = document.querySelector(".contacts-button-map");
+var fmap_btn = document.querySelector(".footer-button-map");
 var mapClose = document.querySelector(".map-modal-close");
 var login = popup.querySelector("[name=login]");
 var password = popup.querySelector("[name=password");
@@ -33,7 +34,7 @@ close.addEventListener("click", function(evt) {
 form.addEventListener("submit", function(evt){
   if(!login.value || !password.value){
     evt.preventDefault();
-    popup.classList.add("modal-error");
+    popup.classList.remove("modal-error");
     popup.offsetWidth = popup.offsetWidth;
     popup.classList.add("modal-error");
   } else {
@@ -58,5 +59,9 @@ window,addEventListener("keydown", function(evt){
  mapClose.addEventListener("click", function(evt){
    evt.preventDefault();
    map.classList.remove("modal-show");
+ });
+ fmap_btn.addEventListener("click", function(evt){
+   evt.preventDefault();
+   map.classList.add("modal-show");
  });
  
