@@ -1,39 +1,39 @@
-.main-navigation{
+.main-navigation {
   font-size: 16px;
   list-style: 20px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  &-wrapper{
+  &-wrapper {
     width: 100%;
     margin-bottom: 60px;
     background-color: #000000;
+    & .container {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
-.main-navigation-wrapper .container{
-  display: flex;
-  justify-content: space-between;
-}
-.main-header{
+.main-header {
   margin-bottom: 75px;
-  &-logo{
+  &-logo {
     width: 368px;
     height: 153px;
     display: block;
-    order: 1;  
+    order: 1;
   }
 }
-.site-navigation{
+.site-navigation {
   margin: 0;
   padding: 0;
   list-style: none;
   width: 620px;
   display: flex;
   flex-wrap: nowrap;
-  &-current{
+  &-current {
     position: relative;
-    & a:not([href]){
+    & a:not([href]) {
       opacity: 0.7;
     }
   }
@@ -47,19 +47,19 @@
     background-color: #ffffff;
   }
 }
-.user-navigation{
+.user-navigation {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
   max-width: 140px;
-  & .login-link{
+  & .login-link {
     padding-left: 50px;
     position: relative;
   }
 }
-.login-link:before{
-  content:"";
+.login-link:before {
+  content: "";
   width: 16px;
   height: 18px;
   position: absolute;
@@ -72,16 +72,16 @@
 }
 .login-link:hover::before,
 .login-link:focus::before,
-.login-link:active::before{
+.login-link:active::before {
   opacity: 1;
 }
-.container{
+.container {
   width: 940px;
   margin: 0 auto;
   padding: 0 10px;
 }
-.site-navigation a, 
-.user-navigation a{
+.site-navigation a,
+.user-navigation a {
   color: #ffffff;
   display: block;
   padding: 25px 20px;
@@ -90,51 +90,51 @@
 .site-navigation a:hover,
 .site-navigation a:focus,
 .user-navigation a:hover,
-.user-navigation a:focus{
+.user-navigation a:focus {
   background-color: #242424;
 }
-.features{
+.features {
   margin-bottom: 80px;
-}
-.features-list{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  min-width: 170px;
-  display: flex;
-  justify-content: space-between;
-}
-.features-item{
-  text-align: center;
-  width: 300px;
-  & p{
-    margin: 0px 10px;
+  &-item {
+    text-align: center;
+    width: 300px;
+    & h3 {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 60px;
+      font-size: 30px;
+      line-height: 42px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #ffffff;
+        left: 50%;
+        bottom: -30px;
+        margin-left: -10px;
+        transform: rotate(45deg);
+      }
+    }
+    & p {
+      margin: 0px 10px;
+    }
+  }
+  &-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 170px;
+    display: flex;
+    justify-content: space-between;
   }
 }
-.features-item h3{
-  margin: 0;
-  padding: 0;
-  margin-bottom: 60px;
-  font-size: 30px;
-  line-height: 42px;
-  position: relative;
-  &::after{
-    content:"";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
-    left: 50%;
-    bottom: -30px;
-    margin-left: -10px;
-    transform: rotate(45deg);
-  }
-}
-.index-columns{
+
+.index-columns {
   color: #000000;
   background-color: #f8f5f2;
-  background-image:
-  url("../img/Index/line.png"),
+  background-image: url("../img/Index/line.png"),
     url("../img/Index/bcg-slice.jpg");
   background-position: center, 0 0;
   background-repeat: no-repeat, repeat;
@@ -142,32 +142,32 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
-}
-.index-columns h2{ 
-  font-size: 30px;
-  line-height: 42px;
-  margin: 0;
-  margin-bottom: 25px;
-}
-.news{
-  width: 380px;
-  &-item{
+  & h2 {
+    font-size: 30px;
+    line-height: 42px;
+    margin: 0;
     margin-bottom: 25px;
-    & p{
+  }
+}
+.news {
+  width: 380px;
+  &-list {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    list-style: none;
+  }
+  &-item {
+    margin-bottom: 25px;
+    & time {
+      text-transform: none;
+    }
+    & p {
       margin: 0;
     }
   }
 }
-.news-list{
-  margin: 0;
-  margin-bottom: 25px;
-  padding: 0;
-  list-style: none;
-}
-.news-item time{
-  text-transform: none;
-}
-.button{
+.button {
   font: inherit;
   text-align: center;
   color: #ffffff;
@@ -178,135 +178,137 @@
   display: inline-block;
   padding: 10px 30px;
   margin-right: 16px;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #663d15;
+  }
+  &.disabled,
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    background-color: #000000;
+  }
 }
-.button:hover,
-.button:focus,
-.button:active{
-  background-color: #663d15;
-}
-.button.disabled,
-.button:disabled{
-  cursor: default;
-  opacity: 0.5;
-  background-color: #000000;
-}
-.gallery{
+.gallery {
   width: 300px;
-  &-button{
+  &-content {
+    height: 164px;
+    margin: 0;
+    background-color: #cccccc;
+    border: 7px solid #ffffff;
+    & img {
+      width: 286px;
+      height: 164px;
+    }
+  }
+  &-button {
     box-sizing: border-box;
     width: 140px;
     margin: 0;
     position: absolute;
     bottom: 0;
-    &-back{
+    &-back {
       left: 0;
     }
-    &-next{
+    &-next {
       right: 0;
     }
   }
-  &-container{
+  &-container {
     width: 300px;
     position: relative;
     height: 260px;
   }
 }
-.gallery-content{
-  height: 164px;
-  margin: 0;
-  background-color: #cccccc;
-  border: 7px solid #ffffff;
-  & img{
-    width: 286px;
-    height: 164px;
-  }
-}
-.contacts{
+.contacts {
   width: 380px;
-  & p{
+  & p {
     margin: 0;
     margin-bottom: 25px;
   }
 }
-.appointment{
+.appointment {
   width: 300px;
-  &-info{
+  &-info {
     margin: 0;
     margin-bottom: 15px;
-    }
-  &-item{
+  }
+  &-item {
     width: 140px;
     margin: 0;
     margin-bottom: 10px;
-    & label{
+    & label {
       display: block;
       margin-bottom: 9px;
       margin-left: 15px;
     }
-  }  
-  &-form{
+  }
+  &-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  & .button{
+  & .button {
     width: 100%;
     margin-top: 10px;
     margin-right: 0;
   }
 }
-.appointment-item input{
+.appointment-item input {
   box-sizing: border-box;
   width: 140px;
   padding: 8px 15px 7px 15px;
   font: inherit;
   background-color: transparent;
   border: 2px solid #000101;
+  &:focus{
+    border-color: #663d15;
+
+  }
 }
-.appointment-item input:focus{
-  border-color: #663d15;
-}
-.main-footer{
+.main-footer {
   color: #ffffff;
   background-color: #212121;
-  background-image: url("../img/Index/bcg-fotter-slice.jpg")
-  background-position 0 0;
+  background-image: url("../img/Index/bcg-fotter-slice.jpg") background-position
+    0 0;
   background-repeat: repeat;
   margin-top: 65px;
   padding: 60px 0;
-  & .container{
+  & .container {
     display: flex;
   }
 }
-.footer-contacts{
+.footer-contacts {
   margin: 0;
   margin-right: 80px;
+  & a{
+    color: #ffffff;
+    text-decoration: underline;
+    &:hover,
+    &:focus{
+      text-decoration: none;
+    }
+  
+  }
 }
-.footer-contacts a{
-  color: #ffffff;
-  text-decoration: underline;
-}
-.footer-contacts a:hover,
-.footer-contacts a:focus{
-  text-decoration: none;
-}
-.footer-social{
+.footer-social {
   text-align: center;
-  & b{
+  & b {
     display: block;
     margin-bottom: 15px;
   }
+  & ul{
+    list-style: none;
+    width: 141px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
-.footer-social ul{
-  list-style: none;
-  display: flex;
-  width: 141px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 0;
-}
-.social-button{
+.social-button {
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -314,31 +316,31 @@
   width: 43px;
   height: 43px;
   background-color: #000000;
-}
-.social-button:hover,
-.social-button:focus{
-  background-color: #ffffff;  
+  &:hover,
+  &:focus{
+    background-color: #ffffff;
+  }
 }
 .social-button:hover path,
-.social-button:focus path{
+.social-button:focus path {
   fill: #000000;
 }
-.footer-copyring{
+.footer-copyring {
   text-align: center;
   margin: 0;
   width: 150px;
   margin-left: auto;
-  & b{
+  & b {
     display: block;
     margin-bottom: 15px;
   }
-}  
+}
 .footer-copyring .button:hover,
-.footer-copyring .button:focus{
+.footer-copyring .button:focus {
   color: #000000;
   background-color: #ffffff;
 }
-.modal{
+.modal {
   display: none;
   position: fixed;
   color: #000000;
@@ -347,18 +349,25 @@
   background-position: 0 0;
   background-repeat: repeat;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
-  &-login{
+  & h2{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 42px;
+  
+  }
+  &-login {
     top: 50%;
     left: 50%;
     width: 300px;
     padding: 50px 80px;
     margin: -230px;
   }
-  &-description{
+  &-description {
     margin: 0;
     margin-bottom: 10px;
   }
-  &-close{
+  &-close {
     width: 22px;
     height: 22px;
     font-size: 0;
@@ -369,8 +378,8 @@
     top: 0;
     right: -34px;
     &::before,
-    &::after{
-      content:"";
+    &::after {
+      content: "";
       position: absolute;
       width: 19px;
       height: 3px;
@@ -378,19 +387,34 @@
       top: 10px;
       left: 2px;
     }
-    &:before{
+    &:before {
       transform: rotate(45deg);
     }
-    &:after{
+    &:after {
       transform: rotate(-45deg);
     }
   }
-}
-.modal h2{
-  margin: 0;
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 42px;
+  &-map{
+    top: 50%;
+    left: 50%;
+    width: 766px;
+    height: 561px;
+    margin: -390px;
+    border: 7px solid white;
+    & p {
+      margin: 0;
+    }  
+  }
+  &-show{
+    display: block;
+    animation-name: bounce;
+    animation-duration: 0.6s;
+  
+  }
+  &-error{
+    animation-name: shake;
+    animation-duration: 0.6s;  
+  }
 }
 .login-form .login-help {
   display: flex;
@@ -398,40 +422,40 @@
   justify-content: space-between;
   margin: 15px 0;
 }
-.login-form p{
+.login-form p {
   margin: 0;
   margin-bottom: 10px;
 }
 .login-form input[type="text"],
-.login-form input[type="password"]{
+.login-form input[type="password"] {
   box-sizing: border-box;
   width: 300px;
   padding: 10px 15px;
   padding-right: 40px;
   font: inherit;
   color: #000000;
-  background-color: #f9f6f3; 
+  background-color: #f9f6f3;
   border: 2px solid #000000;
   text-transform: uppercase;
 }
-.login-icon-user{
+.login-icon-user {
   background-image: url(../img/Index/user.svg);
   background-position: 270px center;
   background-repeat: no-repeat;
 }
-.login-icon-password{
+.login-icon-password {
   background-image: url(../img/Index/lock.svg);
   background-position: 270px center;
   background-repeat: no-repeat;
 }
-.login-form input:focus{
+.login-form input:focus {
   border-color: #663d15;
 }
-.login-checkbox{
+.login-checkbox {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
-  & input[type="checkbox"] + .checkbox-indicator{
+  & input[type="checkbox"] + .checkbox-indicator {
     position: absolute;
     top: 0;
     left: 0;
@@ -439,75 +463,77 @@
     height: 17px;
     border: 2px solid #000000;
   }
-  & input[type="checkbox"]:focus + .checkbox-indicator{
+  & input[type="checkbox"]:focus + .checkbox-indicator {
     border-color: #663d15;
     outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
+    outline: 2px auto -webkit-focus-ring-color;
   }
   & input[type="checkbox"]:checked + .checkbox-indicator:before,
-  & input[type="checkbox"]:checked + .checkbox-indicator:after{
+  & input[type="checkbox"]:checked + .checkbox-indicator:after {
     content: "";
     position: absolute;
     top: 8px;
     left: 1px;
     width: 15px;
     height: 2px;
-    background-color: #000000;    
+    background-color: #000000;
   }
-  & input[type="checkbox"]:checked + .checkbox-indicator:before{
+  & input[type="checkbox"]:checked + .checkbox-indicator:before {
     transform: rotate(45deg);
   }
-  & input[type="checkbox"]:checked + .checkbox-indicator:after{
+  & input[type="checkbox"]:checked + .checkbox-indicator:after {
     transform: rotate(-45deg);
   }
   &:hover,
-  &:focus{
+  &:focus {
     color: #663d15;
   }
-  &:disabled{
+  &:disabled {
     color: #b2b0ad;
   }
 }
-.restore{
+.restore {
   color: #000000;
   text-decoration: underline;
 }
 .restore:hover,
-.restore:focus{
+.restore:focus {
   text-decoration: none;
 }
-.login-form .button{
+.login-form .button {
   width: 100%;
   margin-right: 0;
 }
-.modal-map{
-  top: 50%;
-  left: 50%;
-  width: 766px;
-  height: 561px;
-  margin: -390px;
-  border: 7px solid white;
-  & p{
-    margin: 0;
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+  70% {
+    transform: translateY(30px);
+  }
+  90% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
-.modal-show{
-  display: block;
-  animation-name: bounce;
-  animation-duration: 0.6s;
-}
-.modal-error{
-  animation-name: shake;
-  animation-duration: 0.6s;
-}
-@keyframes bounce {
-  0%{transform: translateY(-2000px);}
-  70%{transform: translateY(30px);}
-  90%{transform: translateY(-10%);}
-  100%{transform: translateY(0);}
-}
-@keyframes shake{
-  0%, 100% {transform: translateX(0);}
-  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
-  20%, 40%, 60%, 80% {transform: translateX(10px);}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }

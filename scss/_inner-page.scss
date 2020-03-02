@@ -76,16 +76,49 @@
 
   & fieldset {
     border: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    &:first-child{
+      margin-bottom: 35px;
+    }
   }
 
   & legend {
     font-size: 24px;
     line-height: 30px;
+    margin-bottom: 26px;
   }
 
   & ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
     line-height: 18px;
+  }
+  &-option{
+    margin-bottom: 19px;
+    padding-left: 45px;
+  }
+  &-input-radio + label:before{
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+  }
+  &-input-radio:checked + label:after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -36px;
+    width: 8px;
+    height: 8px;
+    background-color: #000000;
+    border-radius: 50%;
   }
 }
 
@@ -113,7 +146,7 @@
     justify-content: space-between;
 
 
-    &:nth-last-child(3n) {
+    &:nth-child(3n) {
       margin-right: 0;
     }
 
@@ -170,6 +203,7 @@
 
 .catalog-item-price {
   margin-left: 16px;
+
   & .button {
     line-height: 20px;
     color: #ffffff;
@@ -181,19 +215,20 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 
 
 }
 
 .pagination-item {
-  margin-left: 10px;
+  margin-right: 5px;
+  &:last-child{
+    margin-right: 0;
+  }
 
   & a {
     display: block;
-    text-align: center;
-    font-size: 16px;
-    width: 40px;
-    height: 40px;
+    padding: 10px 16px;
     background-color: #000000;
     color: #ffffff;
 
@@ -409,33 +444,30 @@
 .short-text {
   padding-right: 80px;
 }
-.manufacturers {
-  & .filter-option{
-    position: relative;
-    margin-bottom: 10px;
-    &::before{
-      position: absolute;
-      content: "";
-      width: 13px;
-      height: 13px;
-      left: -30px;
-      border: 2px solid black
-    }
-  }
+.filter-option label{
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
 }
-.group{
-  & .filter-option{
-    position: relative;
-    margin-bottom: 10px;
-    &:before{
-      position: absolute;
-      content: "";
-      width: 13px;
-      height: 13px;
-      left: -30px;
-      top: 2px;
-      border: 2px solid black;
-      border-radius: 50%;
-    }
-  }
+.filter-input-checkbox + label::before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  left: -42px;
+  top: 0;
 }
+.filter-input-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -38px;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/Index/cross.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
